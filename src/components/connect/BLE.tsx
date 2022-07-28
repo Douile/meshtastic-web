@@ -16,16 +16,19 @@ export const BLE = ({ close }: CloseProps): JSX.Element => {
   const { addDevice } = useDeviceStore();
 
   const updateBleDeviceList = useCallback(async (): Promise<void> => {
-    setBleDevices(await navigator.bluetooth.getDevices());
+    if (navigator.bluetooth)
+      setBleDevices(await navigator.bluetooth.getDevices());
   }, []);
 
-  navigator.bluetooth.addEventListener("advertisementreceived", (e) => {
-    console.log(e);
-  });
+  if (navigator.bluetooth) {
+    navigator.bluetooth.addEventListener("advertisementreceived", (e) => {
+      console.log(e);
+    });
 
-  navigator.bluetooth.addEventListener("availabilitychanged", (e) => {
-    console.log(e);
-  });
+    navigator.bluetooth.addEventListener("availabilitychanged", (e) => {
+      console.log(e);
+    });
+  }
 
   useEffect(() => {
     void updateBleDeviceList();
