@@ -89,9 +89,12 @@ export const Serial = ({ close }: CloseProps): JSX.Element => {
         appearance="primary"
         gap={majorScale(1)}
         onClick={() => {
-          void navigator.serial.requestPort().then((port) => {
-            setSerialPorts(serialPorts.concat(port));
-          });
+          void navigator.serial
+            .requestPort()
+            .then((port) => {
+              setSerialPorts(serialPorts.concat(port));
+            })
+            .catch(console.error);
         }}
       >
         New device

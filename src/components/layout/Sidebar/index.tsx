@@ -42,7 +42,7 @@ export const Sidebar = (): JSX.Element => {
       name: "Map",
       icon: GlobeIcon,
       page: "map",
-      disabled: true,
+      //disabled: true,
     },
     {
       name: "Extensions",

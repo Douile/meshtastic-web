@@ -27,7 +27,7 @@ export const subscribeAll = (device: Device, connection: IConnection) => {
     device.setStatus(status);
 
     if (status === Types.DeviceStatusEnum.DEVICE_CONFIGURED) {
-      // device.setReady(true);
+      device.setReady(true);
     } else if (status === Types.DeviceStatusEnum.DEVICE_DISCONNECTED) {
       device.setReady(false);
     }

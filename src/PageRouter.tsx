@@ -5,6 +5,7 @@ import { ChannelsPage } from "./pages/Channels/index.js";
 import { ConfigPage } from "./pages/Config/index.js";
 import { ExtensionsPage } from "./pages/Extensions/Index.js";
 import { InfoPage } from "./pages/Info/index.js";
+import { MapPage } from "./pages/Map/index.js";
 import { MessagesPage } from "./pages/Messages/index.js";
 
 export const PageRouter = (): JSX.Element => {
@@ -12,7 +13,7 @@ export const PageRouter = (): JSX.Element => {
   return (
     <>
       {activePage === "messages" && <MessagesPage />}
-      {/* {activePage === "map" && <MapPage />} */}
+      {activePage === "map" && <MapPage />}
       {activePage === "extensions" && <ExtensionsPage />}
       {activePage === "config" && <ConfigPage />}
       {activePage === "channels" && <ChannelsPage />}

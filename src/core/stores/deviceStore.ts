@@ -351,6 +351,7 @@ export const useDeviceStore = create<DeviceState>((set, get) => ({
                 const device = draft.devices.get(id);
                 if (device) {
                   device.connection = connection;
+                  connection.get;
                 }
               })
             );
